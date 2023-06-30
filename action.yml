@@ -1,0 +1,21 @@
+name: "validate-cloud-release"
+description: "Perform a series of validation check to make sure that a deployment is possible and valid."
+inputs:
+  git-ref:
+    description: "The ref of the event triggering the action"
+    required: true
+  tag-name:
+    description: "The name of the tag associated with the release"
+    required: true
+  action-name:
+    description: "The name of the release action"
+    required: true
+  changes:
+    description: "The changes of the release"
+    required: true
+outputs:
+  website-url:
+    description: "The URL of the bucket"
+runs:
+  using: "docker"
+  image: "Dockerfile"
