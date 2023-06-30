@@ -6,6 +6,6 @@ COPY ./package*.json /home/node/app
 
 RUN npm install
 
-COPY . /home/node/app
+COPY ./src /home/node/app/src
 
 CMD [ "node", "/home/node/app/src/index.js" ]
